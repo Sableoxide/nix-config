@@ -19,9 +19,9 @@
       inherit system;
       modules = [ ./nixos/configuration.nix
         home-manager.nixosModules.home-manager {
-          home-manager.users.sableoxide = { config, pkgs, ...} : {
+          home-manager = { config, pkgs, ...} : {
             imports = [./home-manager/home.nix];
-            home.stateVersion = "25.05";
+            backupFileExtension = "backup";
           };
         }
       ];
