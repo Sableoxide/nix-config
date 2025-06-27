@@ -121,7 +121,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sableoxide = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "lp" "input"]; # Enable ‘sudo’ for the user.
+      extraGroups = [ "networkmanager" "wheel" "lp" "input" ]; # Enable ‘sudo’ for the user.
       packages = with pkgs; [
         tree
       ];
