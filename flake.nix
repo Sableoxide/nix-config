@@ -17,7 +17,13 @@
   in {
     nixosConfigurations.nixos-btw = nixpkgs.lib.nixosSystem {
       inherit system;
-      modules = [ ./nixos/configuration.nix ];
+      modules = [ ./nixos/configuration.nix
+        home-manager.nixosModules.home-manager {
+          home-manager.users.sableoxide = { config, pkgs, ...} : {
+            imports = [./home-manager/home.nix];
+          };
+        }
+      ];
     };
 
     homeConfigurations."sableoxide@nixos-btw" = home-manager.lib.homeManagerConfiguration {
