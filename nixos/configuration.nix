@@ -87,6 +87,17 @@
 
   #Hyprland
   programs.hyprland.enable = true;
+  #additional hyprland configuration
+  programs.hyprland.xwayland.enable = true;
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+  };
+  hardware = {
+    opengl.enable = true;
+  };
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   
 
   # Configure keymap in X11
@@ -132,6 +143,9 @@
     wofi
     btop
     bat
+    libnotify
+    dunst
+    waybar
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
