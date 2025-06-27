@@ -21,7 +21,7 @@
         home-manager.nixosModules.home-manager {
           home-manager.users.sableoxide = { config, pkgs, ...} : {
             imports = [./home-manager/home.nix];
-            backupFileExtension = "backup";
+            home-manager.backupFileExtension = "backup";
           };
         }
       ];
