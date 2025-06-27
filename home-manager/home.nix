@@ -62,7 +62,7 @@
       hms-preflake= "home-manager switch";
       # FLAKE
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-system-flake/.#nixos-btw";
-      hms = "home-manager switch --flake ~/nixos-system-flake/.#sableoxide@nixos-btw";
+      hms = "home-manager switch -b backup --flake ~/nixos-system-flake/.#sableoxide@nixos-btw";
       # CLEAN GRUB ENTRIES
       clean-grub-entries = "sudo nix-env --delete-generations old --profile /nix/var/nix/profiles/system && sudo /nix/var/nix/profiles/system/bin/switch-to-configuration switch";
     };
