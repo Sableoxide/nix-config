@@ -19,7 +19,7 @@
       inherit system;
       modules = [ ./nixos/configuration.nix
         home-manager.nixosModules.home-manager {
-          home-manager = { config, pkgs, ...} : {
+          home-manager.users.sableoxide = { config, pkgs, ...} : {
             imports = [./home-manager/home.nix];
             backupFileExtension = "backup";
           };
