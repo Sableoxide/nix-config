@@ -116,6 +116,8 @@
       ];
   };
 
+  home-manager.backupFileExtension = "backup";
+
   # programs.firefox.enable = true;
 
   # List packages installed in system profile.
