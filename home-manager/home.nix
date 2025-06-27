@@ -14,7 +14,7 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
-  backupFileExtension = "backup";
+  home-manager.backupFileExtension = "backup";
 
   # allow unfree packages
   nixpkgs.config.allowUnfree = true;
