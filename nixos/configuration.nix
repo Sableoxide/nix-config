@@ -87,6 +87,17 @@
 
   #Hyprland
   programs.hyprland.enable = true;
+  #additional hyprland configuration
+  programs.hyprland.xwayland.enable = true;
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+  };
+  hardware = {
+    opengl.enable = true;
+  };
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   
 
   # Configure keymap in X11
@@ -110,7 +121,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sableoxide = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "lp" "input"]; # Enable ‘sudo’ for the user.
+      extraGroups = [ "networkmanager" "wheel" "lp" "input" ]; # Enable ‘sudo’ for the user.
       packages = with pkgs; [
         tree
       ];
@@ -122,6 +133,7 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    rustup
     wget
     kitty
     kbd
@@ -132,6 +144,9 @@
     wofi
     btop
     bat
+    libnotify
+    dunst
+    waybar
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
