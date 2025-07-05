@@ -47,7 +47,10 @@
     allowedUDPPortRanges = allowedTCPPortRanges;
   };
 
-  # unused i gues
+  # enable both 32bit and 64bit support
+  hardware.enableAllFirmware = true;
+
+  # unused i guess
   # FONTS
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
