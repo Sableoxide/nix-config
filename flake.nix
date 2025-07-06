@@ -25,7 +25,10 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = { inherit inputs username hostname; };
-              users.${username} = import ./home-manager/home.nix;
+              users.${username} = {
+                home.backupFileExtension = "backup";
+                imports = [./home-manager/home.nix];
+              };
             };
         }
       ];
