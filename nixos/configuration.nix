@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
     ];
 
-  home-manager.backupFileExtension = "backup";
+  #home-manager.backupFileExtension = "backup";
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -100,7 +100,7 @@
     NIXOS_OZONE_WL = "1";
   };
   hardware = {
-    opengl.enable = true;
+    graphics.enable = true;
   };
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
