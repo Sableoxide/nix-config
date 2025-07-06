@@ -12,6 +12,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  boot.binfmt.emulatedSystems = [ "i686-linux" ];  # For 32-bit support
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/1b3d4b4a-4354-4479-adc0-bc7d5eb7f09b";
