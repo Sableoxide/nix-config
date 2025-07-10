@@ -27,7 +27,6 @@
               extraSpecialArgs = { inherit inputs username hostname; };
               users.${username} = {
                 imports = [./home-manager/home.nix];
-                home = "/home/${username}";
               };
             };
         }
