@@ -104,6 +104,9 @@
   };
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+  # enable hotspot functionality
+  networking.wireless.hostapd.enable = true;
   
 
   # Configure keymap in X11
