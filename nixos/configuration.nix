@@ -141,6 +141,7 @@
     linux-wifi-hotspot
     rustup
     python311
+    postgresql_17_jit
     wget
     kitty
     kbd
