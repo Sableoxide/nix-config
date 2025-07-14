@@ -103,11 +103,7 @@
     graphics.enable = true;
   };
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-
-  # enable hotspot functionality
-  networking.wireless.hostapd.enable = true;
-  
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];  
 
   # Configure keymap in X11
   #services.xserver.xkb.layout = "sg";
@@ -142,6 +138,7 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    linux-wifi-hotspot
     rustup
     python311
     wget
