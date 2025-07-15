@@ -133,7 +133,6 @@
       packages = with pkgs; [
         tree
         postman
-        ciscoPacketTracer8
       ];
   };
 
@@ -152,6 +151,7 @@
     kbd
     brave
     nodejs_24
+    ciscoPacketTracer8
     wineWowPackages.stable
     hyprpaper  
     wofi
