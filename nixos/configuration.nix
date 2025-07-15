@@ -151,7 +151,6 @@
     kbd
     brave
     nodejs_24
-    (pkgs.ciscoPacketTracer8.override { packetTracerSource = /nix/store/6562jz9mm4cika220bjxhbh42chp33hr-Packet_Tracer822_amd64_signed.deb; })
     wineWowPackages.stable
     hyprpaper  
     wofi
@@ -160,6 +159,17 @@
     libnotify
     dunst
     waybar
+
+    (pkgs.ciscoPacketTracer8.overrideAttrs (oldAttrs: {
+      # This is the correct way to specify the source of the .deb file
+      src = pkgs.fetchurl {
+        # IMPORTANT: Use file:/// and the ABSOLUTE path to your original .deb file
+        # This tells Nix to look for the file locally.
+        # Even if it's in /nix/store, you point to the original source location.
+        url = "file:///home/sableoxide/cisco-packet-tracer/Packet_Tracer822_amd64_signed.deb"; # <-- REPLACE with your actual original .deb path!
+        # This MUST be the SHA256 hash you calculated in Step 1
+        sha256 = "6cd2b8891df92d2cad8b6fdc47480fc089de085c4f3fe95eb80d5450a2a7f72d";
+      };}))
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
