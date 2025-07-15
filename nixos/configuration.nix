@@ -129,6 +129,8 @@
       extraGroups = [ "networkmanager" "wheel" "lp" "input" ]; # Enable ‘sudo’ for the user.
       packages = with pkgs; [
         tree
+        postman
+        ciscoPacketTracer8
       ];
   };
 
