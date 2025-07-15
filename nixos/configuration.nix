@@ -24,6 +24,9 @@
   #allow proprietary apps(packages)
   nixpkgs.config.allowUnfree = true;
 
+  #auto optimize nix on every rebuild
+  nix.settings.auto-optimise-store = true;
+
   # Set your time zone.
   time.timeZone = "Africa/Nairobi";
 
@@ -130,6 +133,7 @@
       packages = with pkgs; [
         tree
         postman
+        ciscoPacketTracer8
       ];
   };
 
