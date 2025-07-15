@@ -151,7 +151,7 @@
     kbd
     brave
     nodejs_24
-    ciscoPacketTracer8
+    (pkgs-unstable.ciscoPacketTracer8.override { packetTracerSource = /nix/store/6562jz9mm4cika220bjxhbh42chp33hr-Packet_Tracer822_amd64_signed.deb; })
     wineWowPackages.stable
     hyprpaper  
     wofi
