@@ -167,7 +167,7 @@
   };
 
   # Required for Steam to work properly
-  hardware.graphics.driSupport32Bit = true;
+  hardware.graphics.enable32Bit = true;
   services.pulseaudio.support32Bit = true;
 
   # List services that you want to enable:
