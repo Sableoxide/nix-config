@@ -130,7 +130,6 @@
       packages = with pkgs; [
         tree
         postman
-        ciscoPacketTracer8
       ];
   };
 
@@ -168,8 +167,8 @@
   };
 
   # Required for Steam to work properly
-  hardware.opengl.driSupport32Bit = true;
-  hardware.pulseaudio.support32Bit = true;
+  hardware.graphics.driSupport32Bit = true;
+  services.pulseaudio.support32Bit = true;
 
   # List services that you want to enable:
 
