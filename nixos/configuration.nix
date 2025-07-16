@@ -101,6 +101,7 @@
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
+    XDG_DATA_DIRS = "/var/lib/flatpak/exports/share:/home/sableoxide/.local/share/flatpak/exports/share";
   };
   hardware = {
     graphics.enable = true;
