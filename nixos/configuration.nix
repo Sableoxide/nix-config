@@ -137,6 +137,7 @@
       packages = with pkgs; [
         tree
         postman
+        gns3-gui
       ];
   };
 
@@ -156,6 +157,7 @@
     brave
     nodejs_24
     wineWowPackages.stable
+    gns3-server
     hyprpaper  
     wofi
     btop
