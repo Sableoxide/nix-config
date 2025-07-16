@@ -109,7 +109,7 @@
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];  
 
   #FLATPACK
-  services.flatpack.enable = true;
+  services.flatpak.enable = true;
 
   # Configure keymap in X11
   #services.xserver.xkb.layout = "sg";
