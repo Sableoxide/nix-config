@@ -137,7 +137,6 @@
         tree
         postman
         gns3-gui
-        pgadmin4
       ];
   };
 
@@ -151,6 +150,7 @@
     rustup
     python311
     postgresql_17_jit
+    pgadmin4
     wget
     kitty
     kbd
