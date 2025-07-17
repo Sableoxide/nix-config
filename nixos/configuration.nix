@@ -137,6 +137,7 @@
         tree
         postman
         gns3-gui
+        pgadmin4
       ];
   };
 
