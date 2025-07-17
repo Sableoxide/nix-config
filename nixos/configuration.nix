@@ -178,7 +178,6 @@
   services.postgresql = {
     enable = true;
     package = pkgs.postgresql_17_jit;
-    dataDir = "/var/lib/postgresql";
   };
 
   # Required for Steam to work properly
