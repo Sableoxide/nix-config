@@ -175,7 +175,7 @@
     enableSSHSupport = true;
   };
 
-  services.postgesql = {
+  services.postgresql = {
     enable = true;
     package = pkgs.postgresql_17_jit;
     dataDir = "/var/lib/postgresql";
