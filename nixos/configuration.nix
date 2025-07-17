@@ -175,6 +175,12 @@
     enableSSHSupport = true;
   };
 
+  services.postgesql = {
+    enable = true;
+    package = pkgs.postgresql_17_jit;
+    dataDir = "/var/lib/postgresql";
+  }
+
   # Required for Steam to work properly
   hardware.graphics.enable32Bit = true;
   services.pulseaudio.support32Bit = true;
