@@ -137,6 +137,11 @@
         tree
         postman
         gns3-gui
+        iw
+        procps
+        hostapd
+        iproute2
+        haveged
       ];
   };
 
@@ -147,6 +152,7 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     linux-wifi-hotspot
+    util-linux
     rustup
     python311
     postgresql_17_jit
