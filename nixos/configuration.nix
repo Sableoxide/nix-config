@@ -24,6 +24,9 @@
   #allow proprietary apps(packages)
   nixpkgs.config.allowUnfree = true;
 
+  #auto optimize nix on every rebuild
+  nix.settings.auto-optimise-store = true;
+
   # Set your time zone.
   time.timeZone = "Africa/Nairobi";
 
@@ -103,8 +106,10 @@
     graphics.enable = true;
   };
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];  
+
+  #FLATPACK
+  services.flatpak.enable = true;
 
   # Configure keymap in X11
   #services.xserver.xkb.layout = "sg";
@@ -130,6 +135,13 @@
       extraGroups = [ "networkmanager" "wheel" "lp" "input" ]; # Enable ‘sudo’ for the user.
       packages = with pkgs; [
         tree
+        postman
+        gns3-gui
+        iw
+        procps
+        hostapd
+        iproute2
+        haveged
       ];
   };
 
@@ -139,13 +151,19 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    linux-wifi-hotspot
+    util-linux
     rustup
+    python311
+    postgresql_17_jit
+    pgadmin4
     wget
     kitty
     kbd
     brave
     nodejs_24
     wineWowPackages.stable
+    gns3-server
     hyprpaper  
     wofi
     btop
@@ -157,11 +175,20 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  programs.mtr.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
+
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_17_jit;
+  };
+
+  # Required for Steam to work properly
+  hardware.graphics.enable32Bit = true;
+  services.pulseaudio.support32Bit = true;
 
   # List services that you want to enable:
 
