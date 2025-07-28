@@ -171,6 +171,7 @@
     libnotify
     dunst
     waybar
+    libsigcxx
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -185,6 +186,8 @@
     enable = true;
     package = pkgs.postgresql_17_jit;
   };
+
+  environment.variables.LD_LIBRARY_PATH = "${pkgs.libsigcxx}/lib";
 
   # Required for Steam to work properly
   hardware.graphics.enable32Bit = true;
