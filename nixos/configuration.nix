@@ -151,6 +151,7 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    nix-index
     linux-wifi-hotspot
     util-linux
     rustup
@@ -187,7 +188,14 @@
     package = pkgs.postgresql_17_jit;
   };
 
-  environment.variables.LD_LIBRARY_PATH = "${pkgs.libsigcxx}/lib";
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    zlib # numpy
+    libgcc  # sqlalchemy
+    # that's where the shared libs go, you can find which one you need using 
+    # nix-locate --top-level libstdc++.so.6  (replace this with your lib)
+    # ^ this requires `nix-index` pkg
+  ];
 
   # Required for Steam to work properly
   hardware.graphics.enable32Bit = true;
