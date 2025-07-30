@@ -134,6 +134,7 @@
       isNormalUser = true;
       extraGroups = [ "networkmanager" "wheel" "lp" "input" ]; # Enable ‘sudo’ for the user.
       packages = with pkgs; [
+        libreoffice-qt6-fresh
         tree
         postman
         gns3-gui
