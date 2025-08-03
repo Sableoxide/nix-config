@@ -156,6 +156,7 @@
     linux-wifi-hotspot
     util-linux
     rustup
+    redis
     python311
     postgresql_17_jit
     pgadmin4
