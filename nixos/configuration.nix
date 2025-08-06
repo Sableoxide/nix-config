@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
     ];
 
-  #home-manager.backupFileExtension = "backup";
+  home-manager.backupFileExtension = "backup";
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -111,6 +111,9 @@
   #FLATPACK
   services.flatpak.enable = true;
 
+  # DOCKER
+  virtualization.docker.enable = true;
+
   # Configure keymap in X11
   #services.xserver.xkb.layout = "sg";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -132,7 +135,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sableoxide = {
       isNormalUser = true;
-      extraGroups = [ "networkmanager" "wheel" "lp" "input" ]; # Enable ‘sudo’ for the user.
+      extraGroups = [ "networkmanager" "wheel" "lp" "input" "docker"]; # Enable ‘sudo’ for the user.
       packages = with pkgs; [
         libreoffice-qt6-fresh
         tree
