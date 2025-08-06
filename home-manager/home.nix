@@ -15,8 +15,6 @@
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
-  backupFileExtension = "backup";
-
   # allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
