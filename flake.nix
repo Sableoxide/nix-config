@@ -6,7 +6,6 @@
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
-      home-manager.backupFileExtension = "backup";
     };
   };
 
@@ -23,13 +22,13 @@
         ./nixos/configuration.nix 
         inputs.home-manager.nixosModules.default {
             home-manager = {
-              backupFileExtension = "backup";
               useUserPackages = true;
               extraSpecialArgs = { inherit inputs username hostname; };
               users.${username} = {
                 imports = [./home-manager/home.nix];
               };
             };
+            home-manager.backupFileExtension = "backup";
         }
       ];
     };
