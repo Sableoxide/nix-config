@@ -23,7 +23,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # HOME-MANAGER
-  home-manager.backupFileExtension = "backup";
+  backupFileExtension = "backup";
 
   #auto optimize nix on every rebuild
   nix.settings.auto-optimise-store = true;
