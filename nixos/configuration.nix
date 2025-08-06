@@ -140,7 +140,6 @@
         libreoffice-qt6-fresh
         tree
         postman
-        gns3-gui
         iw
         procps
         hostapd
@@ -169,13 +168,13 @@
     brave
     nodejs_24
     wineWowPackages.stable
-    gns3-server
     hyprpaper  
     wofi
     btop
     bat
     libnotify
     dunst
+    docker
     waybar
     libsigcxx
   ];
