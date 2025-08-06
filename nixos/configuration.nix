@@ -112,7 +112,7 @@
   services.flatpak.enable = true;
 
   # DOCKER
-  services.docker.enable = true;
+  virtualisation.docker.enable = true;
 
   # Configure keymap in X11
   #services.xserver.xkb.layout = "sg";
@@ -174,7 +174,6 @@
     bat
     libnotify
     dunst
-    docker
     waybar
     libsigcxx
   ];
