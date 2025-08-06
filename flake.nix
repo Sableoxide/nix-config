@@ -22,6 +22,7 @@
         ./nixos/configuration.nix 
         inputs.home-manager.nixosModules.default {
             home-manager = {
+              backupFileExtension = "backup";
               useUserPackages = true;
               extraSpecialArgs = { inherit inputs username hostname; };
               users.${username} = {

@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports =
@@ -21,9 +21,6 @@
   
   #allow proprietary apps(packages)
   nixpkgs.config.allowUnfree = true;
-
-  # HOME-MANAGER
-  backupFileExtension = "backup";
 
   #auto optimize nix on every rebuild
   nix.settings.auto-optimise-store = true;
