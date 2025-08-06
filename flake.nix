@@ -24,7 +24,7 @@
             #home-manager.backupFileExtension = "backup";
             home-manager = {
               useUserPackages = true;
-              home-manager.backupFileExtension = "backup"
+              home-manager.backupFileExtension = "backup";
               extraSpecialArgs = { inherit inputs username hostname; };
               users.${username} = {
                 imports = [./home-manager/home.nix];
