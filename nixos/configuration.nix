@@ -112,7 +112,7 @@
   services.flatpak.enable = true;
 
   # DOCKER
-  docker = {enable = true;}
+  docker = {enable = true;};
 
   # Configure keymap in X11
   #services.xserver.xkb.layout = "sg";
