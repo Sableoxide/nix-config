@@ -20,7 +20,7 @@
       inherit system;
       modules = [ 
         ./nixos/configuration.nix 
-        home-manager.nixosModules.home-manger {
+        home-manager.nixosModules.home-manager {
             home-manager = {
               useUserPackages = true;
               backupFileExtension = "backup";
