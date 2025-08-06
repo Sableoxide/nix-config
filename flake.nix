@@ -20,15 +20,15 @@
       inherit system;
       modules = [ 
         ./nixos/configuration.nix 
-        inputs.home-manager.nixosModules.default {
+        home-manager.nixosModules.home-manger {
             home-manager = {
               useUserPackages = true;
+              backupFileExtension = "backup";
               extraSpecialArgs = { inherit inputs username hostname; };
               users.${username} = {
                 imports = [./home-manager/home.nix];
               };
             };
-            home-manager.backupFileExtension = "backup";
         }
       ];
     };
